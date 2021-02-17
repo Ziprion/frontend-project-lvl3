@@ -19,7 +19,7 @@
     "verbose": true,
     "testURL": "http://localhost/"
   },
-  "main": "dist/index.html",
+  "private": true,
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
