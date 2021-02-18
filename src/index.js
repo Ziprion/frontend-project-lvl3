@@ -3,7 +3,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 
 function runApp() {
-  const url = 'https://api.spotify.com/v1/artists/ID';
-  return axios.get(url).then((response) => console.log(response));
+  const url = 'https://meduza.io/rss/all';
+  axios.get(url).then((response) => {
+    const parser = new DOMParser()
+    //const doc = parser.parseFromString(response, "text/html")
+    console.log(response.data)
+  });
+ 
+  
+
+  return;
 }
 runApp();
