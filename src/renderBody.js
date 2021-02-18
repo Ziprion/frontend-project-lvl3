@@ -8,10 +8,10 @@ export default (state) => {
     return;
   }
   const h2ElFeed = document.createElement('h2');
-  h2ElFeed.textContent = 'Фиды';    
+  h2ElFeed.textContent = 'Фиды';
   feedsContainer.appendChild(h2ElFeed);
   const h2ElPost = document.createElement('h2');
-  h2ElPost.textContent = 'Посты';    
+  h2ElPost.textContent = 'Посты';
   postsContainer.appendChild(h2ElPost);
   const ulElFeed = document.createElement('ul');
   ulElFeed.classList.add('list-group', 'mb-5');
@@ -19,7 +19,7 @@ export default (state) => {
   const ulElPost = document.createElement('ul');
   ulElPost.classList.add('list-group');
   postsContainer.appendChild(ulElPost);
-  const feeds = state.feeds;
+  const { feeds } = state;
   feeds.forEach((feed) => {
     const liElFeed = document.createElement('li');
     liElFeed.classList.add('list-group-item');
@@ -30,7 +30,7 @@ export default (state) => {
     pElFeed.textContent = feed.description;
     liElFeed.appendChild(pElFeed);
     ulElFeed.appendChild(liElFeed);
-    const posts = feed.posts;
+    const { posts } = feed;
     posts.forEach((post) => {
       const liElPost = document.createElement('li');
       liElPost.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start');
@@ -42,4 +42,4 @@ export default (state) => {
       ulElPost.appendChild(liElPost);
     });
   });
-}
+};
