@@ -27,8 +27,8 @@ export default (state, urlRSS) => {
       throw new Error('Network response was not ok.');
     })
     .then((data) => {
-      const newState = state;
-      newState.errors = '';
-      parseData(state, data);
+      // const newState = state;
+      // newState.errors = '';
+      parseData(state, data, urlRSS);
     });
 };
