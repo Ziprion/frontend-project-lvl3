@@ -1,7 +1,8 @@
 export default (state, data, urlRSS) => {
+  console.log('now parse', data);
   const newState = state;
   const parser = new DOMParser();
-  const doc = parser.parseFromString(data.contents, 'text/html');
+  const doc = parser.parseFromString(data.contents, 'application/xml');
   console.log(doc)
   const rss = doc.querySelector('rss');
   if (rss === null) {

@@ -5,7 +5,7 @@ const checkRSS = (state) => {
   const currentFeeds = state.feeds;
   currentFeeds.forEach((feed) => {
     const currentUrl = feed.url;
-    fetch(`https://hexlet-allorigins.herokuapp.com/raw?url=${encodeURIComponent(currentUrl)}`)
+    fetch(`https://hexlet-allorigins.herokuapp.com/get?url=${encodeURIComponent(currentUrl)}`)
       .then((response) => {
         if (response.ok) return response.json();
         throw new Error('Network response was not ok.');

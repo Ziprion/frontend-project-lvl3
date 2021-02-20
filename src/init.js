@@ -30,8 +30,8 @@ export default () => {
       form.reset();
       form.focus();
       submit.blur();
-      console.log('Start check')
-    setTimeout(checkRSS, 5000, state)
+      //console.log('Start check')
+      setTimeout(checkRSS, 5000, state)
     });
     
   });
