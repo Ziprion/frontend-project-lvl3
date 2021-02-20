@@ -25,12 +25,13 @@ export default (state) => {
     liElFeed.classList.add('list-group-item');
     const h3ElFeed = document.createElement('h3');
     h3ElFeed.textContent = feed.title;
-    liElFeed.appendChild(h3ElFeed);
+    liElFeed.prepend(h3ElFeed);
     const pElFeed = document.createElement('p');
     pElFeed.textContent = feed.description;
-    liElFeed.appendChild(pElFeed);
-    ulElFeed.appendChild(liElFeed);
-    const { posts } = feed;
+    liElFeed.prepend(pElFeed);
+    ulElFeed.prepend(liElFeed);
+  });
+  const { posts } = state;
     posts.forEach((post) => {
       const liElPost = document.createElement('li');
       liElPost.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start');
@@ -39,7 +40,6 @@ export default (state) => {
       data-id="2" target="_blank" rel="noopener noreferrer">${post.title}</a><button
       type="button" class="btn btn-primary btn-sm" data-id="${post.title}" data-toggle="modal"
       data-target="#modal">Просмотр</button></li>`;
-      ulElPost.appendChild(liElPost);
+      ulElPost.append(liElPost);
     });
-  });
 };

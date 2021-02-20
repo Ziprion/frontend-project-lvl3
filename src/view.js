@@ -12,6 +12,9 @@ export default (state) => {
       case 'feeds':
         renderBody(watchedState);
         break;
+      case 'posts':
+        renderBody(watchedState);
+        break;
       case 'errors':
         renderRSS(watchedState);
         break;

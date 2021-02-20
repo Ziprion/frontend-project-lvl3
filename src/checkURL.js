@@ -1,9 +1,10 @@
 import * as yup from 'yup';
 import _ from 'lodash';
 import parseData from './parseData.js';
+import axios from 'axios';
 
 const schema = yup.object().shape({
-  url: yup.string().required().url().matches(/(rss)/),
+  url: yup.string().required().url(),
 });
 const validate = (url) => {
   try {
@@ -21,7 +22,7 @@ export default (state, urlRSS) => {
     newState.process = 'filling';
     return;
   }
-  fetch(`https://hexlet-allorigins.herokuapp.com/get?url=${encodeURIComponent(urlRSS)}`)
+  fetch(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(urlRSS)}`)
     .then((response) => {
       if (response.ok) return response.json();
       throw new Error('Network response was not ok.');

@@ -16,6 +16,7 @@ export default () => {
       process: 'filling',
       errors: '',
       feeds: [],
+      posts: [],
     };
     const watchedState = view(state);
     const form = document.querySelector('form');
