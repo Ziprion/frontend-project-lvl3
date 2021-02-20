@@ -12,7 +12,7 @@ const checkRSS = (state) => {
       })
       .then((data) => {
         const parser = new DOMParser();
-        const doc = parser.parseFromString(data.contents, 'text/html');
+        const doc = parser.parseFromString(data.contents, 'application/xml');
         const items = doc.querySelectorAll('item');
         const postsItem = Array.from(items).reduce((acc, item) => {
           const titleItem = item.querySelector('title');
