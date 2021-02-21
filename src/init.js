@@ -1,6 +1,4 @@
 import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/js/bootstrap.js';
 import i18n from 'i18next';
 import checkURL from './checkURL.js';
 import view from './view.js';
