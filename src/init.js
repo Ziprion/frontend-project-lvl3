@@ -1,5 +1,6 @@
 import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/js/bootstrap.js';
 import i18n from 'i18next';
 import checkURL from './checkURL.js';
 import view from './view.js';
@@ -10,13 +11,13 @@ export default () => {
   i18n.init({
     lng: 'ru',
     resources,
-  }).then(function () {
-    // initialized and ready to go!
+  }).then(() => {
     const state = {
       process: 'filling',
       errors: '',
       feeds: [],
       posts: [],
+      uniq: 0,
     };
     const watchedState = view(state);
     const form = document.querySelector('form');
@@ -26,14 +27,12 @@ export default () => {
       watchedState.process = 'checking';
       state.errors = '';
       const formData = new FormData(e.target);
-      const urlRSS = formData.get('url');
-      checkURL(watchedState, urlRSS);
+      const url = formData.get('url');
+      checkURL(watchedState, url);
       form.reset();
       form.focus();
       submit.blur();
-      //console.log('Start check')
-      setTimeout(checkRSS, 5000, state)
     });
-    
+    setTimeout(checkRSS, 5000, state);
   });
 };
