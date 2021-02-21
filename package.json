@@ -19,7 +19,7 @@
     "verbose": true,
     "testURL": "http://localhost/"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
