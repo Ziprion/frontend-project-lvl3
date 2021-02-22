@@ -27,8 +27,11 @@ export default (state) => {
     case 'same RSS':
       message = 'RSS уже существует';
       break;
+    case 'ALERT! RSS':
+      message = 'Ресурс не содержит валидный RSS';
+      break;
     default:
-      message = log;
+      message = 'RSS уже существует';
       break;
   }
   feedback.textContent = message;
