@@ -11,7 +11,13 @@ const checkRSS = (state) => {
   currentFeeds.forEach((feed) => {
     const currentUrl = feed.url;
     const feedID = feed.id;
-    axios.get(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(currentUrl)}`)
+    axios({
+      method: 'get',
+      url: `https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(currentUrl)}`,
+      headers: {
+        accept: 'application/json, text/plain, */*',
+      },
+    })
       .then((response) => response.data)
       .then((data) => {
         const parser = new DOMParser();
