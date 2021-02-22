@@ -1,3 +1,4 @@
+import axios from 'axios';
 import renderBody from './renderBody';
 
 const checkRSS = (state) => {
@@ -10,11 +11,8 @@ const checkRSS = (state) => {
   currentFeeds.forEach((feed) => {
     const currentUrl = feed.url;
     const feedID = feed.id;
-    fetch(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(currentUrl)}`)
-      .then((response) => {
-        if (response.ok) return response.json();
-        throw new Error('Network response was not ok.');
-      })
+    axios.get(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(currentUrl)}`)
+      .then((response) => response.data)
       .then((data) => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(data.contents, 'application/xml');

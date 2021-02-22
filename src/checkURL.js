@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import axios from 'axios'
 import _ from 'lodash';
 import parseData from './parseData.js';
 
@@ -21,10 +22,6 @@ export default (state, url) => {
     newState.process = 'filling';
     return;
   }
-  fetch(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`)
-    .then((response) => {
-      if (response.ok) return response.json();
-      throw new Error('Network response was not ok.');
-    })
-    .then((data) => parseData(state, data, url));
+  axios.get(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`)
+    .then((response) => parseData(state, response.data, url));
 };
