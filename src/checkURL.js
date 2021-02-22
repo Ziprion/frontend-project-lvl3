@@ -8,7 +8,7 @@ const schema = yup.object().shape({
 });
 const validate = (url) => {
   try {
-    schema.validateSync(url, { abortEarly: true });
+    schema.validateSync(url, { abortEarly: false });
     return {};
   } catch (e) {
     return _.keyBy(e.inner, 'path');
@@ -24,7 +24,7 @@ export default (state, url) => {
   }
   axios({
     method: 'get',
-    url: `https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`,
+    url: `https://hexlet-allorigins.herokuapp.com/get?url=${encodeURIComponent(url)}&disableCache=true`,
     headers: {
       accept: 'application/json, text/plain, */*',
     },
