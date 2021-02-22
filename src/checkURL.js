@@ -15,9 +15,9 @@ const validate = (url) => {
   }
 };
 export default (state, url) => {
+  const newState = state;
   const errorsFirst = validate({ url });
   if (!_.isEqual(errorsFirst, {})) {
-    const newState = state;
     newState.errors = errorsFirst.url.message;
     newState.process = 'filling';
     return;
@@ -28,5 +28,10 @@ export default (state, url) => {
     headers: {
       accept: 'application/json, text/plain, */*',
     },
-  }).then((response) => parseData(state, response.data, url));
+  })
+    .catch((err) => {
+      newState.errors = err.message;
+      throw err;
+    })
+    .then((response) => parseData(state, response.data, url));
 };
