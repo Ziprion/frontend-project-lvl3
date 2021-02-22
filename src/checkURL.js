@@ -24,7 +24,7 @@ export default (state, url) => {
   }
   axios({
     method: 'get',
-    url: `https://hexlet-allorigins.herokuapp.com/get?url=${encodeURIComponent(url)}&disableCache=true`,
+    url: `https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`,
     headers: {
       accept: 'application/json, text/plain, */*',
     },
