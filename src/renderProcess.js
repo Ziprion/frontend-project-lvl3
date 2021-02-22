@@ -1,5 +1,4 @@
 export default (state) => {
-  console.log(state);
   const input = document.querySelector('input');
   const submit = document.querySelector('button[aria-label="add"]');
   if (state.process === 'checking') {

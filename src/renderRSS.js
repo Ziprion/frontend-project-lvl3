@@ -12,29 +12,27 @@ export default (state) => {
   feedback.classList.add('text-danger');
   input.classList.add('is-invalid');
   const log = state.errors;
-  let message = '';
   switch (log) {
     case 'no internet':
-      message = 'Ошибка сети';
+      feedback.textContent = 'Ошибка сети';
       break;
     case 'Network Error':
-      message = 'Ошибка сети';
+      feedback.textContent = 'Ошибка сети';
       // newState.process = 'filling';
       break;
     case 'url must be a valid URL':
-      message = 'Ссылка должна быть валидным URL';
+      feedback.textContent = 'Ссылка должна быть валидным URL';
       break;
     case 'same RSS':
-      message = 'RSS уже существует';
+      feedback.textContent = 'RSS уже существует';
       break;
     case 'ALERT! RSS':
-      message = 'Ресурс не содержит валидный RSS';
+      feedback.textContent = 'Ресурс не содержит валидный RSS';
       break;
     default:
-      message = 'RSS уже существует';
+      feedback.textContent = 'RSS уже существует';
       break;
   }
-  feedback.textContent = message;
 };
 /**
  *success: 'RSS успешно загружен',
