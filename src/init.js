@@ -7,7 +7,7 @@ import checkRSS from './checkRSS.js';
 
 export default () => {
   i18n.init({
-    lng: 'ru',
+    lng: 'en',
     resources,
   }).then(() => {
     const state = {
