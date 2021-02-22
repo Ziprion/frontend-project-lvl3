@@ -22,6 +22,11 @@ export default (state, url) => {
     newState.process = 'filling';
     return;
   }
-  axios.get(`https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`)
-    .then((response) => parseData(state, response.data, url));
+  axios({
+    method: 'get',
+    url: `https://hexlet-allorigins.herokuapp.com/get?disableCache=true&url=${encodeURIComponent(url)}`,
+    headers: {
+      accept: 'application/json, text/plain, */*',
+    },
+  }).then((response) => parseData(state, response.data, url));
 };
