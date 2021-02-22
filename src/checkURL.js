@@ -32,5 +32,7 @@ export default (state, url) => {
     .then((response) => parseData(state, response.data, url))
     .catch((err) => {
       newState.errors = err.message;
+      const input = document.querySelector('input');
+      input.removeAttribute('readonly');
     });
 };

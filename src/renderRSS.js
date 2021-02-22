@@ -1,5 +1,5 @@
 export default (state) => {
-  const newState = state;
+  // const newState = state;
   const feedback = document.querySelector('.feedback');
   feedback.classList.remove('text-success', 'text-danger');
   const input = document.querySelector('input');
@@ -19,7 +19,7 @@ export default (state) => {
       break;
     case 'Network Error':
       message = 'Ошибка сети';
-      newState.process = 'filling';
+      // newState.process = 'filling';
       break;
     case 'url must be a valid URL':
       message = 'Ссылка должна быть валидным URL';
