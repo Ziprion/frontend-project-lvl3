@@ -1,9 +1,8 @@
 export default {
   translation: {
-    // BEGIN (write your solution here)
-    key: 'click',
-    key_plural: 'clicks',
-    reset: 'Reset',
-    // END
+    success: 'RSS успешно загружен',
+    noValidUrl: 'Ссылка должна быть валидным URL',
+    sameRSS: 'RSS уже существует',
+    noRSS: 'Ресурс не содержит валидный RSS',
   },
 };

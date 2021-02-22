@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import axios from 'axios'
+import axios from 'axios';
 import _ from 'lodash';
 import parseData from './parseData.js';
 
