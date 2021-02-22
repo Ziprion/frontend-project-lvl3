@@ -1,11 +1,9 @@
-import i18next from 'i18next';
-
 export default (state) => {
   const feedback = document.querySelector('.feedback');
   feedback.classList.remove('text-success', 'text-danger');
   if (state.errors === 'ok') {
     feedback.classList.add('text-success');
-    feedback.textContent = i18next.t('success');
+    feedback.textContent = 'RSS успешно загружен';
     return;
   }
   feedback.classList.add('text-danger');
