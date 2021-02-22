@@ -43,5 +43,7 @@ export default (state, data, urlRSS) => {
   newState.process = 'filling';
   newState.errors = 'ok';
   const form = document.querySelector('form');
+  const input = document.querySelector('input');
   form.reset();
+  input.focus();
 };
