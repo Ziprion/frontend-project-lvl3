@@ -10,6 +10,6 @@ export default (state) => {
     input.setAttribute('readonly', '');
   } else {
     submit.disabled = false;
-    input.removeAttribute('readonly', '');
+    input.removeAttribute('readonly');
   }
 };
