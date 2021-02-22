@@ -31,7 +31,7 @@ export default (state, url) => {
   })
     .catch((err) => {
       newState.errors = err.message;
-      throw new Error();
+      throw new Error('Network Error');
     })
     .then((response) => parseData(state, response.data, url));
 };
