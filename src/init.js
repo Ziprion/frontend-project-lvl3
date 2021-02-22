@@ -2,13 +2,21 @@ import 'bootstrap';
 import i18next from 'i18next';
 import checkURL from './checkURL.js';
 import view from './view.js';
-import resources from './locales';
 import checkRSS from './checkRSS.js';
 
 export default () => {
   i18next.init({
     lng: 'ru',
-    resources,
+    resources: {
+      ru: {
+        translation: {
+          success: 'RSS успешно загружен',
+          noValidUrl: 'Ссылка должна быть валидным URL',
+          sameRSS: 'RSS уже существует',
+          noRSS: 'Ресурс не содержит валидный RSS',
+        },
+      },
+    },
   }).then(() => {
     const state = {
       process: 'filling',
