@@ -14,6 +14,9 @@ export default (state) => {
   const log = state.errors;
   let message = '';
   switch (log) {
+    case 'no internet':
+      message = 'Ошибка сети';
+      break;
     case 'Network Error':
       message = 'Ошибка сети';
       newState.process = 'filling';

@@ -26,7 +26,6 @@ export default () => {
     };
     const watchedState = view(state);
     const form = document.querySelector('form');
-    const submit = document.querySelector('button[aria-label="add"]');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       watchedState.process = 'checking';
@@ -34,7 +33,6 @@ export default () => {
       const formData = new FormData(e.target);
       const url = formData.get('url');
       checkURL(watchedState, url);
-      submit.blur();
     });
   });
 };

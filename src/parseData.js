@@ -46,7 +46,9 @@ export default (state, data, urlRSS) => {
   newState.errors = 'ok';
   const form = document.querySelector('form');
   const input = document.querySelector('input');
+  const submit = document.querySelector('button[aria-label="add"]');
   form.reset();
   input.focus();
+  submit.blur();
   setTimeout(checkRSS, 5000, state);
 };
