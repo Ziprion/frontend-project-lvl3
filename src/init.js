@@ -38,7 +38,7 @@ export default () => {
       form.reset();
       form.focus();
       submit.blur();
+      setTimeout(checkRSS, 5000, state);
     });
-    setTimeout(checkRSS, 5000, state);
   });
 };

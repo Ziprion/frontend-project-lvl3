@@ -15,6 +15,7 @@ const validate = (url) => {
   }
 };
 export default (state, url) => {
+  console.log(encodeURIComponent(url));
   const newState = state;
   const errorsFirst = validate({ url });
   if (!_.isEqual(errorsFirst, {})) {
