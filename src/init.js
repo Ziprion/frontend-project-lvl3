@@ -35,9 +35,9 @@ export default () => {
       const formData = new FormData(e.target);
       const url = formData.get('url');
       checkURL(watchedState, url);
-      if (watchedState.errors === 'ok') {
-        form.reset();
-      }
+      // if (state.errors === 'ok') {
+      //   form.reset();
+      // }
       form.focus();
       submit.blur();
       setTimeout(checkRSS, 5000, state);

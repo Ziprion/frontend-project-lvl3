@@ -42,4 +42,6 @@ export default (state, data, urlRSS) => {
   newState.posts = postsItem.concat(state.posts);
   newState.process = 'filling';
   newState.errors = 'ok';
+  const form = document.querySelector('form');
+  form.reset();
 };
