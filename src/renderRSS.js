@@ -13,14 +13,20 @@ export default (state) => {
   let message = '';
   switch (log) {
     case 'url must be a valid URL':
-      message = i18next.t('noValidUrl');
+      message = 'Ссылка должна быть валидным URL';
       break;
     case 'same RSS':
-      message = i18next.t('sameRSS');
+      message = 'RSS уже существует';
       break;
     default:
-      message = i18next.t('noRSS');
+      message = 'Ресурс не содержит валидный RSS';
       break;
   }
   feedback.textContent = message;
 };
+/**
+ *success: 'RSS успешно загружен',
+          noValidUrl: 'Ссылка должна быть валидным URL',
+          sameRSS: 'RSS уже существует',
+          noRSS: 'Ресурс не содержит валидный RSS',
+ */
