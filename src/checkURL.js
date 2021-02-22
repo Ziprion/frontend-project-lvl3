@@ -32,6 +32,5 @@ export default (state, url) => {
     .then((response) => parseData(state, response.data, url))
     .catch((err) => {
       newState.errors = err.message;
-      throw err;
     });
 };
