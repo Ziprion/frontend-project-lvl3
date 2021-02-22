@@ -1,6 +1,6 @@
 export default (state) => {
   console.log(state);
-  // const input = document.querySelector('input');
+  const input = document.querySelector('input');
   const submit = document.querySelector('button[aria-label="add"]');
   if (state.process === 'checking') {
     const feedback = document.querySelector('.feedback');
@@ -10,6 +10,6 @@ export default (state) => {
     // input.setAttribute('readonly', '');
   } else {
     submit.disabled = false;
-    // input.removeAttribute('readonly');
+    input.removeAttribute('readonly');
   }
 };

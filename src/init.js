@@ -27,6 +27,8 @@ export default () => {
     const watchedState = view(state);
     const form = document.querySelector('form');
     form.addEventListener('submit', (e) => {
+      const input = document.querySelector('input');
+      input.setAttribute('readonly', '');
       e.preventDefault();
       watchedState.process = 'checking';
       state.errors = '';
