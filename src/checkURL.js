@@ -34,5 +34,7 @@ export default (state, url) => {
       newState.errors = err.message;
       const input = document.querySelector('input');
       input.removeAttribute('readonly');
+      const submit = document.querySelector('button[aria-label="add"]');
+      submit.disabled = false;
     });
 };
