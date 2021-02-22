@@ -7,9 +7,9 @@ export default (state) => {
     feedback.classList.remove('text-success', 'text-danger');
     feedback.innerHTML = '';
     submit.disabled = true;
-    input.setAttribute('readonly', 'readonly');
+    input.setAttribute('readonly', '');
   } else {
     submit.disabled = false;
-    input.removeAttribute('readonly', 'readonly');
+    input.removeAttribute('readonly', '');
   }
 };
