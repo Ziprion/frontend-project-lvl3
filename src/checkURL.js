@@ -29,11 +29,9 @@ export default (state, url) => {
       accept: 'application/json, text/plain, */*',
     },
   })
-    .catch((err) => {
-      newState.errors = err.message;
-    })
     .then((response) => parseData(state, response.data, url))
     .catch((err) => {
+      newState.errors = err.message;
       throw err;
     });
 };
