@@ -1,3 +1,5 @@
+import checkRSS from './checkRSS';
+
 export default (state, data, urlRSS) => {
   const newState = state;
   const parser = new DOMParser();
@@ -46,4 +48,5 @@ export default (state, data, urlRSS) => {
   const input = document.querySelector('input');
   form.reset();
   input.focus();
+  setTimeout(checkRSS, 5000, state);
 };

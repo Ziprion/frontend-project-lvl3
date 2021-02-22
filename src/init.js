@@ -2,7 +2,6 @@ import 'bootstrap';
 import i18next from 'i18next';
 import checkURL from './checkURL.js';
 import view from './view.js';
-import checkRSS from './checkRSS.js';
 
 export default () => {
   i18next.init({
@@ -35,12 +34,7 @@ export default () => {
       const formData = new FormData(e.target);
       const url = formData.get('url');
       checkURL(watchedState, url);
-      // if (state.errors === 'ok') {
-      //   form.reset();
-      // }
-      form.focus();
       submit.blur();
-      setTimeout(checkRSS, 5000, state);
     });
   });
 };
