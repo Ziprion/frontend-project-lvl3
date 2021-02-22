@@ -8,14 +8,13 @@ const schema = yup.object().shape({
 });
 const validate = (url) => {
   try {
-    schema.validateSync(url, { abortEarly: false });
+    schema.validateSync(url, { abortEarly: true });
     return {};
   } catch (e) {
     return _.keyBy(e.inner, 'path');
   }
 };
 export default (state, url) => {
-  console.log(encodeURIComponent(url));
   const newState = state;
   const errorsFirst = validate({ url });
   if (!_.isEqual(errorsFirst, {})) {
